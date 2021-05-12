@@ -10,6 +10,9 @@ export default function Dashboard() {
     console.log('dashboard')
     return(
         <>
+
+            <DashLogin/>
+            
             <DashActivityListing/>
             <FormActivity/>
             <DashCircuitsListing/>

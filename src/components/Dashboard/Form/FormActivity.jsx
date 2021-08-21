@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 import "./Form.scss";
 
 export default function FormActivity() {
@@ -15,10 +15,10 @@ export default function FormActivity() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('activity')
+    console.log("activity");
     const postActivity = async () => {
       try{
-          const response = await axios.post('http://localhost:8080/activities', {
+          const response = await axios.post('http://localhost:8081/activities', {
             name: name,
             description: description,
             nbpax: person,
@@ -32,10 +32,8 @@ export default function FormActivity() {
       } catch(err) {
           console.log(err)
       }
-      
-  }
-  postActivity()
-
+    };
+    postActivity();
   };
 
   return (
@@ -154,7 +152,7 @@ export default function FormActivity() {
           />
         </label>
 
-        <button>Submit</button>
+        <input type="submit" value="Submit"></input>
       </form>
     </div>
   );
